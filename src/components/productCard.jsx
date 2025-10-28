@@ -3,7 +3,7 @@ export default function ProductCard() {
   return (
     <div className="product-card">
       <h2>Product Name</h2>
-      <img src="../assets/react.svg" alt="Product Image" /> 
+      <img src="../public/vite.svg" alt="Product Image" className="img" /> 
       <p>Product Description</p>
       <span>$19.99</span>
     </div>
