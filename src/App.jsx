@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-      <h1>Hello React</h1>
+      <h1 className="text-run 800">Hello React</h1>
       <ProductCard name="Apple MacBook" description="This is Apple MacBook" price="$100"></ProductCard>
-      <ProductCard name="Apple ipad" description="This is Apple Ipad" price="$200"></ProductCard>
+      <ProductCard name="Apple ipad" description="This is Apple Ipad" price="$200 "></ProductCard>
       
       
     </>
