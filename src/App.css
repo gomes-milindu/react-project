@@ -1,1 +1,9 @@
-
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.main-container{
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: red !important;
+}

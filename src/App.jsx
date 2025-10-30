@@ -1,17 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import ProductCard from './components/productCard'
+import AdminPage from './components/adminPage'
 
 function App() {
   
 
   return (
-    <>
-      <h1 className='text-red-800'>Hello React</h1>
-      <ProductCard name="Apple MacBook" description="This is Apple MacBook" price="$100"></ProductCard>
-      <ProductCard name="Apple ipad" description="This is Apple Ipad" price="$200 "></ProductCard>
+    <BrowserRouter>
+      <div className= "main-container">
+          <Routes>
+            <Route path ="/" element={<h1>Home page</h1>}/>
+            <Route path ="/register" element={<h1>Register page</h1>}/>
+            <Route path ="/admin" element={<AdminPage/>}/>
+          </Routes>
+      </div>
       
-      
-    </>
+    </BrowserRouter>
   )
 }
 
