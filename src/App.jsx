@@ -4,6 +4,7 @@ import ProductCard from './components/productCard'
 import AdminPage from '../pages/adminPage'
 import HomePage from '../pages/homePage'
 import TestPage from '../pages/testPage'
+import LoginPage from '../pages/loginPage'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
             <Route path ="/register" element={<h1>Register page</h1>}/>
             <Route path ="/admin/*" element={<AdminPage/>}/>
             <Route path ="/test" element={<TestPage/>}/>
+            <Route path ="/login" element={<LoginPage/>}/>
           </Routes>
       </div>
       
