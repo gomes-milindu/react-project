@@ -1,19 +1,35 @@
 import axios from "axios";
 import {useState} from "react";
 import Header from "../src/components/header";
+import { useNavigate } from "react-router-dom";
 export default function LoginPage(){
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const navigate = useNavigate() // smoothly pages athara naigate wenna
+
     async function handleLogin(){
-        console.log("Login clicked");
-        const response = await axios.post( import.meta.env.VITE_API_URL+"/api/users/login",{
-            email: email,
-            password: password
-        },
+        try{
+            console.log("Login clicked");
+            const response = await axios.post( import.meta.env.VITE_API_URL+"/api/users/login",{
+                email: email,
+                password: password
+                },
         
-    ); 
-    console.log(response.data);
+            ); 
+            console.log(response.data);
+
+            localStorage.setItem("token",response.data.token)
+            const user = response.data.user;
+            if(user.role=="admin"){
+                window.location.href="/admin"
+            }else{
+                alert("123")
+                window.location.href="/"
+                }
+        }catch(err){
+            console.log("Login Failed",e)
+        }
         
 
     }
