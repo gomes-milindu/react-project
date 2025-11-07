@@ -19,32 +19,66 @@ export default function LoginPage(){
     }
     return(
         
-        <div className="w-full h-screen bg-primary flex  flex-col items-center justify-start gap-10">
-            
-            <Header/>
-            <div className="w-[800px] h-[600px] bg-amber-300 mt-6 flex flex-row">
-                <div className="w-[400px] h-full bg-amber-800"></div>
-                <div className="w-[400px] h-full bg-amber-500">
-                    <h1 className="text-3xl font-bold mt-4">Login Page</h1>
+        <div className="min-h-screen flex items-center justify-center bg-primary text-secondary">
+      {/* Background pattern / glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5f5dc]/40 via-transparent to-[#8AA624]/10 blur-3xl"></div>
 
-                    <p className="mt-5">Email</p>
-                    <input  className="w-[80%] h-[30px] bg-amber-50 rounded-xl mt-2" onChange={
-                        (e)=>{
-                            // console.log("email changed");
-                            setEmail(e.target.value);
-                        }
-                    }/>
-                    
-                    <p className="mt-5">Password</p>
-                    <input className="w-[80%] h-[30px] bg-amber-50 rounded-xl mt-2" onChange={
-                        (e)=>{
-                            setPassword(e.target.value);
-                        }
-                    }/>
+      <div className="relative z-10 w-full max-w-md bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-[#A2AF9B]/30">
+        <h1 className="text-3xl font-semibold text-center text-[#8AA624] mb-6 tracking-wide">
+          Welcome Back
+        </h1>
+        <p className="text-center text-sm text-[#555] mb-8">
+          Sign in to your beauty account
+        </p>
 
-                    <button className="w-[50%] h-[40px] bg-amber-50 text-black rounded-xl mt-10" onClick={handleLogin}>Login</button>
-                </div>
-            </div>
-        </div>
+        <form className="space-y-5">
+          <div>
+            <label className="block text-sm font-medium text-[#8AA624]/80 mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className="w-full px-4 py-3 rounded-xl border border-[#A2AF9B]/40 focus:outline-none focus:border-[#8AA624] bg-[#FFFFF0]/80 placeholder:text-gray-400 text-gray-700"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-[#8AA624]/80 mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="••••••••"
+              className="w-full px-4 py-3 rounded-xl border border-[#A2AF9B]/40 focus:outline-none focus:border-[#8AA624] bg-[#FFFFF0]/80 placeholder:text-gray-400 text-gray-700"
+            />
+          </div>
+
+          <div className="flex items-center justify-between text-sm text-[#8AA624]/80">
+            <label className="flex items-center space-x-2">
+              <input type="checkbox" className="accent-[#8AA624]" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" className="hover:text-[#8AA624]">
+              Forgot Password?
+            </a>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-[#8AA624] text-white py-3 rounded-xl font-medium shadow-md hover:bg-[#7A9520] transition duration-300"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <p className="text-center text-sm text-gray-500 mt-6">
+          Don’t have an account?{" "}
+          <a href="#" className="text-[#8AA624] font-medium hover:underline">
+            Create one
+          </a>
+        </p>
+      </div>
+    </div>
     )   
 }
