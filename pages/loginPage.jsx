@@ -7,7 +7,7 @@ export default function LoginPage(){
     const [password,setPassword] = useState("");
     async function handleLogin(){
         console.log("Login clicked");
-        const response = await axios.post( import.meta.env.VITE_API_URL+"/users/login",{
+        const response = await axios.post( import.meta.env.VITE_API_URL+"/api/users/login",{
             email: email,
             password: password
         },
