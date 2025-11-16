@@ -9,6 +9,7 @@ export default function LoginPage(){
     const navigate = useNavigate() // smoothly pages athara naigate wenna
 
     async function handleLogin(){
+      e.preventDefault()
         try{
             console.log("Login clicked");
             const response = await axios.post( import.meta.env.VITE_API_URL+"/api/users/login",{
@@ -36,7 +37,7 @@ export default function LoginPage(){
     return(
         
         <div className="min-h-screen flex items-center justify-center bg-primary text-secondary">
-      {/* Background pattern / glow */}
+      
       <div className="absolute inset-0 bg-gradient-to-br from-[#f5f5dc]/40 via-transparent to-[#8AA624]/10 blur-3xl"></div>
 
       <div className="relative z-10 w-full max-w-md bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-[#A2AF9B]/30">
@@ -82,7 +83,7 @@ export default function LoginPage(){
 
           <button
             type="submit"
-            className="w-full bg-[#8AA624] text-white py-3 rounded-xl font-medium shadow-md hover:bg-[#7A9520] transition duration-300"
+            className="w-full bg-[#8AA624] text-white py-3 rounded-xl font-medium shadow-md hover:bg-[#7A9520] transition duration-300" onClick={handleLogin}
           >
             Sign In
           </button>
